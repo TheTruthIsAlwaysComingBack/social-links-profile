@@ -1,0 +1,27 @@
+.card {
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Dark-Grey);
+  width: 26.7rem;
+  height: 46.5rem;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+/* Estilos */
+
+@media screen and (min-width: 1440px) {
+  .card {
+    width: 33.2rem;
+    height: 53rem;
+    padding: 3.5rem;
+    border-radius: 1rem;
+  }
+
+  button {
+    height: 3.7rem;
+  }
+}
