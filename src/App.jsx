@@ -11,13 +11,13 @@ function App() {
       })
       .then((data) => {
         setuser(data);
-        console.log(data);
+        /* console.log(data); */
       });
   }, []);
   return (
     <>
       {user.map((user) => (
-        <Card key={user.id} user={user} />
+        <Card key={user.name} user={user} />
       ))}
     </>
   );

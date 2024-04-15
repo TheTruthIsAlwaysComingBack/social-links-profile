@@ -1,9 +1,7 @@
 import React from "react";
 import "./UserDetails.css";
 
-const UserDetails = (props) => {
-  const user = props.user;
-
+const UserDetails = ({ user }) => {
   return (
     <div className="contenedor">
       <img src={user.avatar} alt={`avatar de ${user.name}`}></img>

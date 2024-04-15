@@ -5,10 +5,12 @@ import "./Card.css";
 
 const Card = (props) => {
   const user = props.user;
+  const socialLinks = user["social-links"];
+
   return (
     <div className="card">
       <UserDetails user={user} />
-      <ButtonSection />
+      <ButtonSection socialLinks={socialLinks} />
     </div>
   );
 };
