@@ -1,16 +1,34 @@
 import React from "react";
 import "./UserDetails.css";
 
-const UserDetails = ({ user }) => {
+const UserDetails = ({ character }) => {
+  const getStatusClassName = () => {
+    switch (character.status) {
+      case "Alive":
+        return "alive";
+      case "Dead":
+        return "dead";
+      default:
+        return "unknown";
+    }
+  };
+
   return (
     <div className="contenedor">
-      <img src={user.avatar} alt={`avatar de ${user.name}`}></img>
-
-      <h1>{user.name}</h1>
-
-      <h2>{user.location}</h2>
-
-      <p>{user.description}</p>
+      <div className="image">
+        <img src={character.image} alt={`avatar de ${character.name}`}></img>
+      </div>
+      <div className="contenido">
+        <h2>{character.name}</h2>
+        <p className="status">
+          <div className={`bolita ${getStatusClassName()}`}></div>
+          {character.status} - {character.species}
+        </p>
+        <p className="text-gray-principal">Last known location:</p>
+        <p className="location">{character.location.name}</p>
+        <p className="text-gray">First seen in:</p>
+        <p className="view">{character.type}</p>
+      </div>
     </div>
   );
 };

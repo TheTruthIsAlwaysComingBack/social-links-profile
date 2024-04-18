@@ -32,19 +32,16 @@ h1 {
 }
 
 h2 {
-  color: var(--Primario);
-  font-size: 1.2rem;
-  margin-bottom: 1.4rem;
+  color: var(--White);
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.1;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 p {
   font-size: 1.2rem;
-}
-
-img {
-  border-radius: 50%;
-  width: 30%;
-  margin-bottom: 1em;
 }
 
 body {
