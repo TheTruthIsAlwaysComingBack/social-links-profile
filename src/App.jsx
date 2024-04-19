@@ -1,42 +1,43 @@
 import "./App.css";
-import Card from "./components/Card";
+import Caracter from "./components/Caracter";
 import React, { useEffect, useState } from "react";
 
 function App() {
   const [character, setCharacter] = useState([]);
+  const [episodes, setEpisodes] = useState([]);
 
   useEffect(() => {
-    const fetchAllCharacters = async () => {
-      const allCharacters = [];
-      let nextUrl = "https://rickandmortyapi.com/api/character";
-
-      while (nextUrl) {
-        const response = await fetch(nextUrl);
-        const data = await response.json();
-
-        allCharacters.push(...data.results);
-        nextUrl = data.info.next;
-      }
-
-      const mezclarId = [...allCharacters];
-      for (let i = mezclarId.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [mezclarId[i], mezclarId[j]] = [mezclarId[j], mezclarId[i]];
-      }
-
-      const tenRandomCharacters = mezclarId.slice(0, 10);
-      setCharacter(tenRandomCharacters);
-      console.log(allCharacters);
-    };
-
-    fetchAllCharacters();
+    fetch("https://rickandmortyapi.com/api/character/1")
+      .then((Response) => Response.json())
+      .then((data) => {
+        setCharacter(data);
+        console.log(data);
+        fetchEpisodes(data.episode.slice(0, 5)); // Obtener los primeros 4 episodios
+      });
   }, []);
+
+  const fetchEpisodes = (episodesUrls) => {
+    const promesas = episodesUrls.map((url) =>
+      fetch(url).then((response) => response.json())
+    );
+
+    Promise.all(promesas)
+      .then((episodios) => {
+        setEpisodes(episodios);
+        console.log(episodios);
+      })
+      .catch((error) => console.error(error));
+  };
 
   return (
     <>
-      {character.map((character) => (
-        <Card key={character.id} character={character} />
-      ))}
+      {character && (
+        <Caracter
+          key={character.id}
+          character={character}
+          episodes={episodes}
+        />
+      )}
     </>
   );
 }

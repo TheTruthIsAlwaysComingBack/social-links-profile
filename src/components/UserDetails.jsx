@@ -20,10 +20,12 @@ const UserDetails = ({ character }) => {
       </div>
       <div className="contenido">
         <h2>{character.name}</h2>
-        <p className="status">
+        <div className="status">
           <div className={`bolita ${getStatusClassName()}`}></div>
-          {character.status} - {character.species}
-        </p>
+          <p>
+            {character.status} - {character.species}
+          </p>
+        </div>
         <p className="text-gray-principal">Last known location:</p>
         <p className="location">{character.location.name}</p>
         <p className="text-gray">First seen in:</p>
