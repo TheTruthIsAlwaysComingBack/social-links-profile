@@ -18,7 +18,21 @@ html {
   --Dark-Grey: hsl(0, 0%, 12%);
   --Off-Black: hsl(0, 0%, 8%);
 }
+/* #root {
+  display: flex;
+  flex-wrap: wrap;
+  height: safe auto;
+  align-items: center;
+  justify-content: center;
+} */
 
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
 /* GLOBALES */
 h1,
 p,
@@ -48,6 +62,7 @@ body {
   font-size: 1.4rem;
   background-color: var(--Off-Black);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -56,4 +71,9 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
+}
+
+#root a {
+  margin: 20px;
+  width: fit-content;
 }

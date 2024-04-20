@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import RickAndMortyApp from "../components/RickAndMortyApp";
-import "./Card.jsx";
+import RickAndMortyApp from "../components/RickAndMortyApp.jsx";
+import Home from "../components/Home.jsx";
 
 const Navegation = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={Card} />
-        <Route path="/Caracter" element={RickAndMortyApp} />
+        <Route path="" element={<Home />} />
+        <Route path="/character" element={<RickAndMortyApp />} />
+        <Route path="/*" element={<p>Error 404 Recurso no encontrado</p>} />
       </Routes>
     </BrowserRouter>
   );

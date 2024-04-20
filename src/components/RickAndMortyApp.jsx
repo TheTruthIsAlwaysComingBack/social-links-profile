@@ -1,13 +1,15 @@
-import React from "react";
-import Caracter from "./components/Caracter";
+import Caracter from "./Caracter";
 import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const RickAndMortyApp = () => {
   const [character, setCharacter] = useState([]);
   const [episodes, setEpisodes] = useState([]);
+  let [searchParams, setSearchParamns] = useSearchParams();
+  const id = searchParams.get("id");
 
   useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character/2")
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((Response) => Response.json())
       .then((data) => {
         setCharacter(data);

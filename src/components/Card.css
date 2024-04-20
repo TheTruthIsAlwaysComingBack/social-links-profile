@@ -1,23 +1,17 @@
 .card {
-  margin: 20px;
   display: flex;
   flex-direction: column;
   background-color: rgb(60, 62, 68);
   width: 43.2rem;
   height: 20rem;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   border-radius: 1rem;
   overflow: hidden;
 }
 
-/* Estilos */
-
-@media screen and (min-width: 1440px) {
-  .card {
-    border-radius: 1rem;
-  }
-
-  button {
-    height: 3.7rem;
-  }
+a {
+  width: fit-content;
+  height: fit-content;
+  margin: 20px;
 }

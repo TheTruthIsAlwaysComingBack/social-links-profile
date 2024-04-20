@@ -1,11 +1,11 @@
 import "./App.css";
-import RickAndMortyApp from "./components/RickAndMortyApp";
 import React from "react";
+import Navegation from "./routes/Navegation";
 
 function App() {
   return (
     <>
-      <RickAndMortyApp></RickAndMortyApp>
+      <Navegation></Navegation>
     </>
   );
 }

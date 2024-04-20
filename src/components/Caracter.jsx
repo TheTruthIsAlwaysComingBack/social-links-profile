@@ -1,5 +1,6 @@
 import React from "react";
 import "./Caracter.css";
+import { NavLink } from "react-router-dom";
 
 const Caracter = ({ character, episodes }) => {
   const getStatusClassName = () => {
@@ -15,7 +16,7 @@ const Caracter = ({ character, episodes }) => {
 
   return (
     <>
-      <div className="card">
+      <div className="single-card">
         <div className="principal">
           <img src={character.image} alt={`avatar de ${character.name}`}></img>
           <div className="status">
@@ -39,8 +40,9 @@ const Caracter = ({ character, episodes }) => {
             ))}
           </div>
         </div>
-
-        <button className="button">Home</button>
+        <NavLink to={"/"}>
+          <button className="button-home">Home</button>
+        </NavLink>
       </div>
     </>
   );
