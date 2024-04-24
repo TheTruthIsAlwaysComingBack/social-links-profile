@@ -18,7 +18,21 @@ html {
   --Dark-Grey: hsl(0, 0%, 12%);
   --Off-Black: hsl(0, 0%, 8%);
 }
+/* #root {
+  display: flex;
+  flex-wrap: wrap;
+  height: safe auto;
+  align-items: center;
+  justify-content: center;
+} */
 
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
 /* GLOBALES */
 h1,
 p,
@@ -32,31 +46,34 @@ h1 {
 }
 
 h2 {
-  color: var(--Primario);
-  font-size: 1.2rem;
-  margin-bottom: 1.4rem;
+  color: var(--White);
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.1;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 p {
   font-size: 1.2rem;
 }
 
-img {
-  border-radius: 50%;
-  width: 30%;
-  margin-bottom: 1em;
-}
-
 body {
   font-size: 1.4rem;
   background-color: var(--Off-Black);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 100vh;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
+}
+
+#root a {
+  margin: 20px;
+  width: fit-content;
 }
